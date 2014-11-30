@@ -56,6 +56,10 @@
             <div id="stage-container">
                 <canvas id="stage-canvas">Oops, your browser does not support Html5 Canvas.</canvas>  
             </div>
+            <div>
+                <button id="play">Play</button>
+                <button id="restart">Reset</button>
+            </div>
 
             <p>The fun part is watching as the population evolves; as you watch the world animate you will understand why Conway called this Life.  For a more detailed and visual explanation, see this <a href="https://class.coursera.org/modelthinking/lecture/22?s=e" target="_blank">video</a> from the University of Michigan.  If you liked that video, you may want to see the <a href="https://class.coursera.org/modelthinking/lecture/23?s=e" target="_blank">next one</a> in the series which goes into depth on 1D Cellular Automata.  If you are really interested in Cellular Automata, here is an <a href="http://plato.stanford.edu/entries/cellular-automata/"  target="_blank">entry</a> in the Stanford Encyclopedia of Philosophy that talks about 1D Cellular Automata, the Game of Life (2D Cellular Automata) and their significance to the study of complexity and emergent behavior.
                 
@@ -139,25 +143,42 @@
             </ul>
         </section>
         <script>
-        // start the life simulation
-        var theStage = document.getElementById('stage-canvas');
-        var theRunner = new main.LifeRunner(theStage);
-        theRunner.magnification = 2;
+            // start the life simulation
+            var theStage = document.getElementById('stage-canvas');
+            var theRunner = new main.LifeRunner(theStage);
+            theRunner.magnification = 2;
 
-        //
-        // make it so we can start and stop by just touching the stage canvas
-        //
-        theStage.onclick = function(event) {
-            if(theRunner.running) {
-                theRunner.stop();
-            } else {
-                theRunner.start();
+            //
+            // make it so we can start and stop by just touching the stage canvas
+            //
+            var clickToggle = function(event) {
+                if(theRunner.running) {
+                    theRunner.stop();
+                    document.getElementById('play').textContent = "Play";
+                } else {
+                    theRunner.start();
+                    document.getElementById('play').textContent = "Pause";
+                }
             }
-        }
-        theStage.ondblclick = function(event) {
-            theRunner.reset().start();
-        }
-        theRunner.reset().start();
+            theStage.onclick = clickToggle;
+
+            //
+            // buttons
+            //
+            document.getElementById('play').onclick = clickToggle;
+            
+            document.getElementById('restart').onclick = function(event) {
+                // run one frame then stop
+                theRunner.reset().start().stop().start().stop();
+                document.getElementById('play').textContent = "Play";
+
+            }
+
+            //
+            // init; run one frame and stop.
+            //
+            theRunner.reset().start().stop().start().stop();
+            
         </script>
     </main>
 </body>
