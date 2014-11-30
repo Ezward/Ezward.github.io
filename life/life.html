@@ -139,24 +139,25 @@
             </ul>
         </section>
         <script>
-          // start the life simulation
-          var theStage = document.getElementById('stage-canvas');
-          var theRunner = new main.LifeRunner(theStage);
+        // start the life simulation
+        var theStage = document.getElementById('stage-canvas');
+        var theRunner = new main.LifeRunner(theStage);
+        theRunner.magnification = 2;
 
-          //
-          // make it so we can start and stop by just touching the stage canvas
-          //
-          theStage.onclick = function(event) {
-              if(theRunner.running) {
-                  theRunner.stop();
-              } else {
-                  theRunner.start();
-              }
-          }
-          theStage.ondblclick = function(event) {
-              theRunner.reset().start();
-          }
-          theRunner.reset().start();
+        //
+        // make it so we can start and stop by just touching the stage canvas
+        //
+        theStage.onclick = function(event) {
+            if(theRunner.running) {
+                theRunner.stop();
+            } else {
+                theRunner.start();
+            }
+        }
+        theStage.ondblclick = function(event) {
+            theRunner.reset().start();
+        }
+        theRunner.reset().start();
         </script>
     </main>
 </body>

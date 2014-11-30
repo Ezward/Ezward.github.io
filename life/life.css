@@ -1,5 +1,5 @@
 #stage-container {
-    height: 100px;
+    height: 200px;
     border: solid black;
 }
 #stage-container canvas {
