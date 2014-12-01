@@ -8,6 +8,6 @@
   width: 100%;
   height: 100%;
 }
-#play, #restart, #rpentomino {
-    width: 9em;
+#play {
+    width: 7em;
 }
