@@ -58,14 +58,14 @@
         <section id="introduction">
             <a name="introduction"><h3>The Game</h3></a>
             <p>Conway's Life is not really a game, it is a cellular automata that, to our eye, simulates the evolution of a population.  So there are no 'moves' that are made.  Instead, the board (or the world) is populated, then the rules are applied to create a new population.  This is done over and over again so that the population evolves.  Even though the rules are simple, the result can be amazingly complex and interesting.</p>
-            <h4>The rules of Life</h4>
+            <h4>The rules of Life <cite><small>(adapted from <a href="http://en.wikipedia.org/wiki/Conway's_Game_of_Life">Wikipedia</a>)</small></cite></h4>
             <ul>
                 <li>Any live individual with fewer than two live neighbors dies, as if caused by under-population.</li>
                 <li>Any live individual with two or three live neighbors lives on to the next generation.</li>
                 <li>Any live individual with more than three live neighbors dies, as if by overcrowding.</li>
                 <li>Any dead individual with exactly three live neighbors becomes a live individual, as if by reproduction.</li>
             </ul>
-            
+
             <!-- an instance of the simulation -->
             <div id="stage-container">
                 <canvas id="stage-canvas">Oops, your browser does not support Html5 Canvas.</canvas>  
