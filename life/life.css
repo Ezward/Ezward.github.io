@@ -1,12 +1,19 @@
 #stage-container {
-    height: 200px;
-    border: solid black;
-    margin-top: 4px;
-    margin-bottom: 4px;
+    height: 20rem;
+    border: black solid 2px;
+    margin-top: 2rem;
 }
 #stage-container canvas {
   width: 100%;
   height: 100%;
+}
+#playerbuttons {
+    /* width:100%, text-align:center centers the buttons */
+    width: 100%;
+    text-align: center;
+    
+    margin-top: 2px;
+    margin-bottom: 1rem;
 }
 #play {
     width: 5em;

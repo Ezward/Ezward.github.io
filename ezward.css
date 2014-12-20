@@ -1,35 +1,41 @@
+/* use san serif font cause I likes it */
+body {
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-size: 16px;
+}
+
 body{
     margin: 0 auto;
-    font-family: Georgia, Palatino, serif;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
     color: #444444;
     line-height: 1;
-    padding: 30px;
+    padding: 2rem;
 }
 h1, h2, h3, h4 {
     color: #111111;
     font-weight: 400;
 }
 h1, h2, h3, h4, h5 {
-    margin-bottom: 24px;
+    margin-bottom: 1.5rem;
     padding: 0;
 }
 h1 {
-    font-size: 24px;
+    font-size: 1.5rem;
 }
 h2 {
-    font-size: 24px;
+    font-size: 1.5rem;
     /* The bottom margin is small. It's designed to be used with gray meta text
      * below a post title. */
-    margin: 24px 0 6px;
+    margin: 1.5rem 0 0.5rem;
 }
 h3 {
-    font-size: 24px;
+    font-size: 1.5rem;
 }
 h4 {
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 h5 {
-    font-size: 16px;
+    font-size: 1rem;
 }
 a {
     color: #0099ff;
@@ -46,51 +52,51 @@ a:visited {
 }
 ul, ol {
     padding: 0;
-    margin: 2em;
+    margin: 2rem;
 }
 li {
-    line-height: 24px;
+    line-height: 1.5;
 }
 li ul, li ul {
-    margin-left: 24px;
+    margin-left: 1.5rem;
 }
 p, ul, ol, nav {
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 1.5em;
 }
 pre {
-    padding: 0px 24px;
+    padding: 0px 1.5;
     white-space: pre-wrap;
 }
 code {
     font-family: Consolas, Monaco, Andale Mono, monospace;
     line-height: 1.5;
-    font-size: 13px;
+    font-size: 0.75rem;
 }
 
 /* bar above and blow inset aside */
 aside {
     line-height: 1.25;
-    padding: 0.5em;
-    margin-left: 1.5em;
-    margin-right: 1.5em;
+    padding: 0.5rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
     border-top: solid black;
     border-bottom: solid black;
 }
 
 nav {
-    padding: 0 1em 0 1em;
+    padding: 0 1rem 0 1rem;
 }
 nav a {
     display: list-item;
-    margin-left: 1em;
-    margin-right: 1em;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
 /* custom classes */
 .masthead {
-    padding: 1em 1em 1.5em 1em;
-    margin-bottom: 1em;
+    padding: 1rem 1rem 1.5rem 1rem;
+    margin-bottom: 1rem;
     background-color: #DDD;
 }
 .masthead p, .masthead h1 {
@@ -102,9 +108,129 @@ a.home {
 
 /* responsive columns */
 body{
-    max-width: 960px;
+   max-width: 72rem;
 }
 
 .main-content {
 }
+
+/* center the header */
+h1 {
+    text-align: center;
+}
+
+
+/*
+** Responsive Columns
+**
+** we start with a one column layout suitable
+** for mobile devices and above.
+*/
+.row {
+    width: 100%;
+    clear: both; /* clear float to return columns to left */
+}
+.column {
+    width: 100%;
+}
+
+/*
+** enhance layout to support two columns
+** for tablets and above
+*/
+@media screen and (min-width: 720px) {
+    /* 
+    ** float is required to get columns to go side-by-side 
+    */
+    .column {
+        float: left; 
+    }
+
+    /*
+    ** enhance with two columns
+    */
+    .double.column {
+        width: 50%;
+    }
+
+    /*
+    ** Three columns is rendered as two columns
+    ** on a tablet device.
+    */
+    .triple.column {
+        width: 50%;
+    }
+
+    /* 
+    ** we want reset the float at the third column 
+    ** then center it.
+    */
+    .third.triple.column {
+        clear: both;
+    }
+    .third.triple.column.wideorphan {
+        width: 100%;
+    }
+    .third.triple.column.centerorphan {
+        position: relative;
+        left: 25%
+    }
+
+    /*
+    ** enhance to support 2 stacked columns for
+    ** 4 column content on tablets.
+    */
+    .quad.column {
+        width: 50%;
+    }
+
+    /* force break after second column */
+    .third.quad.column { 
+        clear: both; 
+    }
+}
+
+/*
+** enhance with full three columns for 
+** large screen devices.
+*/
+@media screen and (min-width: 1024px) {
+    /*
+    ** enhance to show full three columns
+    ** on large screen devices
+    */
+    .triple.column {
+        width: 33%;
+    }
+
+    /* 
+    ** reset float because we want the third column 
+    ** to be float inline with the others. 
+    */
+    .third.triple.column {
+        clear: none;
+    }
+
+    /* reset to three columns */
+    .third.triple.column.wideorphan,
+    .third.triple.column.centerorphan
+    {
+        position: inherit;
+        width: 33%;
+    }
+
+
+    /*
+    ** enhance with four columns
+    */
+    .quad.column {
+        width: 25%;
+    }
+
+    /* clear break after second column */
+    .third.quad.column { 
+        clear: none;
+    }
+}
+
 

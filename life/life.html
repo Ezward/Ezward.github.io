@@ -56,28 +56,37 @@
         </aside>
         
         <section id="introduction">
-            <a name="introduction"><h3>The Game</h3></a>
-            <p>Conway's Life is not really a game, it is a cellular automata that, to our eye, simulates the evolution of a population.  So there are no 'moves' that are made.  Instead, the board (or the world) is populated, then the rules are applied to create a new population.  This is done over and over again so that the population evolves.  Even though the rules are simple, the result can be amazingly complex and interesting.</p>
-            <h4>The rules of Life <cite><small>(adapted from <a href="http://en.wikipedia.org/wiki/Conway's_Game_of_Life">Wikipedia</a>)</small></cite></h4>
-            <ul>
-                <li>Any live individual with fewer than two live neighbors dies, as if caused by under-population.</li>
-                <li>Any live individual with two or three live neighbors lives on to the next generation.</li>
-                <li>Any live individual with more than three live neighbors dies, as if by overcrowding.</li>
-                <li>Any dead individual with exactly three live neighbors becomes a live individual, as if by reproduction.</li>
-            </ul>
-
-            <!-- an instance of the simulation -->
-            <div id="stage-container">
-                <canvas id="stage-canvas">Oops, your browser does not support Html5 Canvas.</canvas>  
+            <div class="row">
+                <div class="column">
+                    <a name="introduction"><h3>The Game</h3></a>
+                    <p>Conway's Life is not really a game, it is a cellular automata that, to our eye, simulates the evolution of a population.  So there are no 'moves' that are made.  Instead, the board (or the world) is populated, then the rules are applied to create a new population.  This is done over and over again so that the population evolves.  Even though the rules are simple, the result can be amazingly complex and interesting.</p>
+                </div>
             </div>
-            <div>
-                <button id="play">Play</button>
-                <button id="restart">Random</button>
-                <button id="rpentomino">R-pentomino</button>
+            <div class="row">
+                <div class="double column">
+                    <h4>The rules of Life <cite><small>(adapted from <a href="http://en.wikipedia.org/wiki/Conway's_Game_of_Life">Wikipedia</a>)</small></cite></h4>
+                    <ul>
+                        <li>Any live individual with fewer than two live neighbors dies, as if caused by under-population.</li>
+                        <li>Any live individual with two or three live neighbors lives on to the next generation.</li>
+                        <li>Any live individual with more than three live neighbors dies, as if by overcrowding.</li>
+                        <li>Any dead individual with exactly three live neighbors becomes a live individual, as if by reproduction.</li>
+                    </ul>
+                </div>
+                <div id="lifeplayer" class="double column">
+                    <!-- an instance of the simulation -->
+                    <div id="stage-container">
+                        <canvas id="stage-canvas">Oops, your browser does not support Html5 Canvas.</canvas>  
+                    </div>
+                    <div id="playerbuttons">
+                        <button id="play">Play</button>
+                        <button id="restart">Random</button>
+                        <button id="rpentomino">R-pentomino</button>
+                    </div>
+                </div>
             </div>
-
-            <p>The fun part is watching as the population evolves; as you watch the world animate you will understand why Conway called this Life.  For a more detailed and visual explanation, see this <a href="https://class.coursera.org/modelthinking/lecture/22?s=e" target="_blank">video</a> from the University of Michigan.  If you liked that video, you may want to see the <a href="https://class.coursera.org/modelthinking/lecture/23?s=e" target="_blank">next one</a> in the series which goes into depth on 1D Cellular Automata.  If you are really interested in Cellular Automata, here is an <a href="http://plato.stanford.edu/entries/cellular-automata/"  target="_blank">entry</a> in the Stanford Encyclopedia of Philosophy that talks about 1D Cellular Automata, the Game of Life (2D Cellular Automata) and their significance to the study of complexity and emergent behavior.
-                
+            <div class="row">
+                <p>The fun part is watching as the population evolves; as you watch the world animate you will understand why Conway called this Life.  For a more detailed and visual explanation, see this <a href="https://class.coursera.org/modelthinking/lecture/22?s=e" target="_blank">video</a> from the University of Michigan.  If you liked that video, you may want to see the <a href="https://class.coursera.org/modelthinking/lecture/23?s=e" target="_blank">next one</a> in the series which goes into depth on 1D Cellular Automata.  If you are really interested in Cellular Automata, here is an <a href="http://plato.stanford.edu/entries/cellular-automata/"  target="_blank">entry</a> in the Stanford Encyclopedia of Philosophy that talks about 1D Cellular Automata, the Game of Life (2D Cellular Automata) and their significance to the study of complexity and emergent behavior.
+             </div>   
         </section>
         
         <section>
