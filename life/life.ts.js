@@ -404,6 +404,16 @@ var main;
                 return _this._animationLoop(theTime);
             };
         }
+        LifeRunner.prototype.draw = function () {
+            this._renderer.renderFrame(this._population);
+            return this;
+        };
+
+        LifeRunner.prototype.next = function () {
+            this._population.nextGeneration();
+            return this;
+        };
+
         Object.defineProperty(LifeRunner.prototype, "running", {
             get: function () {
                 return this._running;

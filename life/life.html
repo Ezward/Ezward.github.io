@@ -218,7 +218,7 @@
             
             document.getElementById('restart').onclick = function(event) {
                 // run one frame then stop
-                theRunner.reset().start().stop().start().stop();
+                theRunner.reset().draw().next().draw().next();
                 document.getElementById('play').textContent = "Play";
 
             }
@@ -232,7 +232,7 @@
             //
             // init; run one frame and stop.
             //
-            theRunner.reset().start().stop().start().stop();
+            theRunner.reset().draw().next().draw().next();
             
         </script>
     </main>
