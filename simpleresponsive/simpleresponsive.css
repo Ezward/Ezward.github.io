@@ -4,115 +4,6 @@ body {
     font-size: 16px;
 }
 
-body{
-    margin: 0 auto;
-    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-    color: #444444;
-    line-height: 1.25;
-    padding: 2rem;
-}
-h1, h2, h3, h4 {
-    color: #111111;
-    font-weight: 400;
-}
-h1, h2, h3, h4, h5 {
-    margin-bottom: 1.5rem;
-    padding: 0;
-}
-h1 {
-    font-size: 1.5rem;
-}
-h2 {
-    font-size: 1.5rem;
-    /* The bottom margin is small. It's designed to be used with gray meta text
-     * below a post title. */
-    margin: 1.5rem 0 0.5rem;
-}
-h3 {
-    font-size: 1.5rem;
-}
-h4 {
-    font-size: 1.25rem;
-}
-h5 {
-    font-size: 1rem;
-}
-a {
-    color: #0099ff;
-    margin: 0;
-    padding: 0;
-    vertical-align: baseline;
-}
-a:hover {
-    text-decoration: none;
-    color: #ff6600;
-}
-a:visited {
-    color: purple;
-}
-ul, ol {
-    padding: 0;
-    margin: 2rem;
-}
-li {
-    line-height: 1.5;
-}
-li ul, li ul {
-    margin-left: 1.5rem;
-}
-p, ul, ol, nav {
-    font-size: 1rem;
-}
-pre {
-    padding: 0px 1.5;
-    white-space: pre-wrap;
-}
-code {
-    font-family: Consolas, Monaco, Andale Mono, monospace;
-    line-height: 1.5;
-    font-size: 0.75rem;
-}
-
-/* bar above and blow inset aside */
-aside {
-    line-height: 1.25;
-    padding: 0.5rem;
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
-    border-top: solid black;
-    border-bottom: solid black;
-}
-
-nav {
-    padding: 0 1rem 0 1rem;
-}
-nav a {
-    display: list-item;
-    margin-left: 1rem;
-    margin-right: 1rem;
-}
-
-/* custom classes */
-.masthead {
-    padding: 1rem 1rem 1.5rem 1rem;
-    margin-bottom: 1rem;
-    background-color: #DDD;
-}
-.masthead p, .masthead h1 {
-    font-size: 40px;
-}
-a.home {
-    float: right;
-}
-
-/* responsive columns */
-body{
-   max-width: 72rem;
-}
-
-.main-content {
-}
-
 /* center the header */
 h1 {
     text-align: center;
@@ -127,11 +18,11 @@ p {
 h2, h3, h4, h5 {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 /*
-** Responsive Columns
-**
 ** we start with a one column layout suitable
 ** for mobile devices and above.
 */
@@ -148,6 +39,7 @@ h2, h3, h4, h5 {
 ** for tablets and above
 */
 @media screen and (min-width: 720px) {
+
     /* 
     ** float is required to get columns to go side-by-side 
     */
@@ -204,6 +96,7 @@ h2, h3, h4, h5 {
 ** large screen devices.
 */
 @media screen and (min-width: 1024px) {
+    
     /*
     ** enhance to show full three columns
     ** on large screen devices
@@ -243,7 +136,7 @@ h2, h3, h4, h5 {
 }
 
 /*
-** use larger font for hd screens
+** use larger font for high density screens
 ** and televisions.
 */
 @media screen and (min-width: 1440px) {
@@ -251,4 +144,5 @@ h2, h3, h4, h5 {
         font-size: 24px;
     }
 }
+
 
