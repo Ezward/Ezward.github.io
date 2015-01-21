@@ -143,6 +143,20 @@ h2, h3, h4, h5 {
 }
 
 /*
+** this kludge clears the float at the end of the row 
+** and makes it so that the row container's height encompasses
+** all the child columns.
+** see http://www.positioniseverything.net/easyclearing.html
+*/
+.row:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+/*
 ** enhance layout to support two columns
 ** for tablets and above
 */
