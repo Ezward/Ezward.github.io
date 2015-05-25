@@ -14,6 +14,8 @@
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     
+    <script src="//cdn.optimizely.com/js/2383590915.js"></script>
+
     <script>
         // requestAnimFrame shim  with setTimeout fallback
         window.requestAnimationFrame = (function () {
@@ -78,6 +80,7 @@
                         <canvas id="stage-canvas">Oops, your browser does not support Html5 Canvas.</canvas>  
                     </div>
                     <div id="playerbuttons">
+                        <button id="step">Step</button>
                         <button id="play">Play</button>
                         <button id="restart">Random</button>
                         <button id="rpentomino">R-pentomino</button>
@@ -200,7 +203,7 @@
             //
             // make it so we can start and stop by just touching the stage canvas
             //
-            var clickToggle = function(event) {
+            var toggleRunner = function() {
                 if(theRunner.running) {
                     theRunner.stop();
                     document.getElementById('play').textContent = "Play";
@@ -209,6 +212,8 @@
                     document.getElementById('play').textContent = "Pause";
                 }
             }
+            
+            var clickToggle = function(event) { toggleRunner(); }
             theStage.onclick = clickToggle;
 
             //
@@ -216,9 +221,16 @@
             //
             document.getElementById('play').onclick = clickToggle;
             
+            document.getElementById('step').onclick = function(event) {
+                if(theRunner.running) {
+                    toggleRunner(); // stop running
+                } else {
+                    theRunner.start().stop(); // run one step
+                }
+            }
             document.getElementById('restart').onclick = function(event) {
                 // run one frame then stop
-                theRunner.reset().draw().next().draw().next();
+                theRunner.reset().start().stop();
                 document.getElementById('play').textContent = "Play";
 
             }
